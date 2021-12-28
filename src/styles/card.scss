@@ -1,0 +1,45 @@
+.card {
+
+  background-color: rgba(222, 218, 218, 0.63);
+  display: flex;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+
+  &__left, &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__left {
+    width: 80%;
+  }
+
+  &__right {
+    width: 20%;
+    justify-content: space-around;
+  }
+
+  &__author {
+    padding-left: 1rem;
+  }
+
+  &__rate {
+    width: 50px
+  }
+
+  &__notes {
+    width: 50px;
+    height: 50px;
+  }
+
+  &__moreInfo {
+    background-color: #f7ffd0;
+    max-width: 100%;
+    top: 75%;
+    position: absolute;
+    display: none;
+    z-index: 2;
+  }
+}
