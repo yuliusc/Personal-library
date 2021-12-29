@@ -14,6 +14,7 @@ const AddBook = (props) => {
         if (+bookRate < 0 || +bookRate > 5 || bookRate.length === 0 || bookName.trim().length === 0) {
             return;
         }
+        
         props.onAddBook(bookName, bookAuthor, bookRate, bookNotes);
         setbookName('');
         setbookAuthor('');
