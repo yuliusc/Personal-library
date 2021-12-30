@@ -14,6 +14,7 @@ const AddBook = (props) => {
         if (+bookRate < 0 || +bookRate > 5 || bookRate.length === 0 || bookName.trim().length === 0) {
             return;
         }
+
         props.onAddBook(bookName, bookAuthor, bookRate, bookNotes);
         setbookName('');
         setbookAuthor('');
@@ -45,7 +46,7 @@ const AddBook = (props) => {
                        onChange={bookRateChange} value={bookRate}></input>
                 <input type="text" id="bookNotes" placeholder={"Notes"} className={"addBook__notes"}
                        onChange={bookNotesChange} value={bookNotes}></input>
-                <button type="submit">Add book</button>
+                <button type="submit" className={"customButton"}>Add book</button>
             </form>
         </div>
     )

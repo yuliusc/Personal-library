@@ -1,0 +1,9 @@
+.navbar__buttons {
+  display: flex;
+  justify-content: center;
+}
+.navbar__buttons button {
+  margin: 20px;
+}
+
+/*# sourceMappingURL=navbar.css.map */
