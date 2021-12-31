@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
-import '../styles/navbar.css'
 
-const Navbar = (props) => {
-    return (
-        <div className={"navbar"}>
-            <h1 className={"navbar__text"}>Recently read books </h1>
-            <div className={"navbar__buttons"}>
-                <button onClick={props.deleteAllBooks} className={"navbar__clear customButton"}>Clear book set</button>
-                <button onClick={props.showAddBookForm} className={"navbar__add customButton"}>Add your book</button>
+class Navbar extends Component {
+    render() {
+        return (
+            <div>
+                <h1>Ostatnio przeczytane książki</h1>
+                <button>Zaloguj</button>
+                <button>Zarejestruj się</button>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default Navbar;

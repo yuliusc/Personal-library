@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import '../styles/customSelect.css'
 
 function Filters(props) {
 
-    // const [updatefilter, setUpdateFilter] = useState('');
+    // const [filter, setFilter] = useState('');
 
     let filter;
 
