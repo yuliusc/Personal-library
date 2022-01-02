@@ -1,5 +1,12 @@
 import React from 'react';
 import '../styles/card.css'
+import styled from 'styled-components';
+
+const Button = styled.button`
+  border: none;
+  background: #c2aaff;
+  cursor: pointer;
+`;
 
 // const dropdown = () => {
 //     // document.getElementById('moreInfo').style.display = "block"
@@ -12,26 +19,18 @@ import '../styles/card.css'
 // }
 
 const Card = (props) => {
-
-    const onDeleteCard = () => {
-        props.deleteCard(props.title);
-    }
-
     return (
         <div className={"card"}>
             <div className={"card__left"}>
                 <h2 className={"card__title"}>{props.title}</h2>
                 <h3 className={"card__author"}>{props.author}</h3>
             </div>
+            {/*<p className={"card__date"}>04.04.2021</p>*/}
             <div className={"card__right"}>
-                <div className={"card__notes"}> Info</div>
-                <div className={"card__moreInfo"} id={"moreInfo"}>
-                    <p className={"card__date"}>{props.date}</p>
-                    <p className={"card__rate"}>{props.rate}/10</p>
-                    <p>{props.notes} </p>
-                </div>
+                <p className={"card__rate"}>{props.rate}/10</p>
+                <Button className={"card__notes"}> ...</Button>
+                <p className={"card__moreInfo"} id={"moreInfo"}>{props.notes}</p>
             </div>
-            <button onClick={onDeleteCard} className={"card__delete"}>&#10006;</button>
         </div>
     );
 }
