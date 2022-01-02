@@ -1,7 +1,6 @@
 .addBook {
   width: 400px;
   margin: auto;
-  display: none;
 }
 .addBook form {
   display: flex;
