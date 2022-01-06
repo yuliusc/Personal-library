@@ -19,6 +19,11 @@ const Button = styled.button`
 // }
 
 const Card = (props) => {
+
+    const onDeleteCard = () => {
+        props.deleteCard(props.title);
+    }
+
     return (
         <div className={"card"}>
             <div className={"card__left"}>
@@ -31,6 +36,7 @@ const Card = (props) => {
                 <Button className={"card__notes"}> ...</Button>
                 <p className={"card__moreInfo"} id={"moreInfo"}>{props.notes}</p>
             </div>
+            <button onClick={onDeleteCard}>x</button>
         </div>
     );
 }

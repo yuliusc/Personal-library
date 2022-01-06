@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 function Filters(props) {
 
-    // const [filter, setFilter] = useState('');
+    // const [updatefilter, setUpdateFilter] = useState('');
 
     let filter;
 
