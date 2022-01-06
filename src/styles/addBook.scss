@@ -1,6 +1,15 @@
+@import "colors";
+
 .addBook {
   width: 400px;
-  margin: auto;
+  z-index: 1000;
+  position: absolute;
+  background: white;
+  padding: 50px;
+  border-radius: 5px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  font-family: "BebasNeue";
 
   form {
     display: flex;
@@ -15,15 +24,64 @@
   }
 
   &__name, &__author {
-    border-bottom: 2px solid red;
+    border: 2px solid $mainLight;
   }
 
   &__notes {
-    border-left: 2px solid red;
+    border: 2px solid $mainLight;
+    height: auto;
+    white-space: normal;
+    word-break: break-word;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  &__datenrate {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+  }
+
+  &__date {
+    border-color: $mainLight;
+    border-width: 0 0 3px 0;
+    outline: none;
+  }
+
+  &__rate {
+    i {
+      font-size: 25px;
+      color: $mainLight;
+    }
+
+    .colored {
+      color: $mainDark;
+      font-weight: 700;
+    }
+
+    .colored1 {
+      color: $mainDark;
+    }
   }
 
   &__name:focus-visible, &__author:focus-visible, &__notes {
     outline: none;
+  }
+
+  &__button {
+    &--close {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      padding: 0 10px;
+
+      &:after {
+        height: 40px !important;
+
+      }
+    }
   }
 
 }

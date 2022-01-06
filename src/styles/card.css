@@ -1,39 +1,122 @@
+@font-face {
+  font-family: "BebasNeue";
+  src: local("BebasNeue"), url("../fonts/BebasNeue-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Zing";
+  src: local("Zing"), url("../fonts/Zing/ZingRustD2Demo-Base.otf") format("opentype");
+}
 .card {
-  background-color: rgba(222, 218, 218, 0.63);
   display: flex;
   padding: 2rem;
-  border-radius: 1rem;
   margin-bottom: 2rem;
   position: relative;
+  background: white;
+  border: 2px solid black;
+  font-family: "BebasNeue";
+}
+.card:after {
+  content: "";
+  background-image: radial-gradient(#000000 20%, #ffffff 20%);
+  background-position: 0 0;
+  background-size: 6px 6px;
+  width: 100%;
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  height: 100%;
+  z-index: -2;
 }
 .card__left, .card__right {
   display: flex;
   align-items: center;
 }
 .card__left {
-  width: 80%;
+  width: 90%;
 }
 .card__right {
-  width: 20%;
+  width: 10%;
   justify-content: space-around;
 }
 .card__author {
   padding-left: 1rem;
 }
 .card__rate {
-  width: 50px;
+  width: 100%;
 }
-.card__notes {
-  width: 50px;
-  height: 50px;
+.card__info {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+  position: relative;
+  padding: 10px;
+  font-family: "Zing";
+}
+.card__info:before {
+  transition: width 1s;
+  content: "";
+  width: 0%;
+  height: 12px;
+  background: linear-gradient(80deg, rgba(207, 70, 252, 0) 8%, rgba(182, 88, 222, 0.829866981) 16%, rgba(181, 111, 200, 0.9419117989) 28%, rgba(212, 162, 213, 0.1155812667) 89%, rgba(214, 165, 214, 0.7122199221) 93%, rgba(207, 70, 252, 0) 94%);
+  bottom: 2px;
+  left: 0px;
+  position: absolute;
+}
+.card__info:hover:before {
+  width: 100%;
 }
 .card__moreInfo {
-  background-color: #f7ffd0;
-  max-width: 100%;
-  top: 75%;
+  background-color: #fef5ff;
+  width: 400px;
+  right: 140px;
   position: absolute;
-  display: none;
-  z-index: 2;
+  z-index: 100;
+  border: 2px solid #7a1a7a;
+  padding: 15px;
+  border-radius: 0.5rem;
+  font-family: "Zing";
+}
+.card__moreInfo:before {
+  content: "";
+  right: -41px;
+  position: absolute;
+  top: calc(50% - 20px);
+  z-index: 100;
+  border-color: transparent transparent transparent #7a1a7a;
+  border-style: solid;
+  border-width: 20px 20px 20px 20px;
+  height: 0px;
+  width: 0px;
+}
+.card__date {
+  text-align: right;
+}
+.card__notes {
+  margin-left: 25px;
+  text-align: left;
+}
+.card__notes:before {
+  position: absolute;
+  content: "NOTES";
+  color: white;
+  left: -17px;
+  padding: 1px 10px;
+  top: 44%;
+  background: black;
+  width: auto;
+  transform: rotate(270deg);
+}
+.card__delete {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #7a1a7a;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=card.css.map */
