@@ -71,6 +71,13 @@ function App() {
             <Navbar/>
             <AddBook onAddBook={addBookHandler}/>
             <CardsList books={bookSet} deleteCard={deleteCard}></CardsList>
+
+function App() {
+    return (
+        <div className="App">
+            <Navbar/>
+            <AddBook/>
+            <CardsList></CardsList>
         </div>
     );
 }

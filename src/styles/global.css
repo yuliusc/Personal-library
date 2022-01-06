@@ -1,0 +1,33 @@
+.customButton {
+  align-items: center;
+  background-color: #f8e3fb;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  height: 40px;
+  justify-content: center;
+  line-height: 24px;
+  position: relative;
+  padding: 0 20px;
+}
+.customButton:after {
+  content: "";
+  background-color: black;
+  border-radius: 0.5rem;
+  height: 40px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(6px, 6px);
+  transition: transform 0.2s ease-out;
+  z-index: -1;
+}
+.customButton:hover:after {
+  transform: translate(0, 0);
+}
+
+/*# sourceMappingURL=global.css.map */
