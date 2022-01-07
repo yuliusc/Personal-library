@@ -1,0 +1,63 @@
+.filterCont {
+  position: relative;
+  height: 40px;
+  width: 250px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: 50px;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+.filterCont #sortByText {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  z-index: 100;
+  color: #7f7b7b;
+  font-weight: 700;
+}
+.filterCont .customDropdown {
+  list-style: none;
+  margin: 0 10px;
+  right: 10px;
+  top: 50px;
+  z-index: 100;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.93);
+  padding: 4px 10px;
+  border: 2px solid #dbb8e0;
+  transition: all 400ms;
+}
+.filterCont .customDropdown button {
+  border: none;
+  background-color: transparent;
+  position: relative;
+  color: #7f7b7b;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.filterCont .customDropdown button:before {
+  transition: width 1s;
+  content: "";
+  width: 0%;
+  height: 18px;
+  background: linear-gradient(80deg, rgba(207, 70, 252, 0) 8%, rgba(182, 88, 222, 0.329866981) 16%, rgba(181, 111, 200, 0.2419117989) 28%, rgba(212, 162, 213, 0.1155812667) 89%, rgba(214, 165, 214, 0.2122199221) 93%, rgba(207, 70, 252, 0) 94%);
+  bottom: 2px;
+  left: -7px;
+  position: absolute;
+  z-index: -1;
+}
+.filterCont .customDropdown button:hover:before {
+  width: 115%;
+}
+.filterCont .showDropdown {
+  z-index: 20;
+  opacity: 1;
+}
+.filterCont .hideDropdown {
+  z-index: -1;
+  opacity: 0;
+}
+
+/*# sourceMappingURL=customDropdown.css.map */

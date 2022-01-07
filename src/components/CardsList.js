@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Card from "./Card";
 import "../styles/cardCont.css"
 import Filters from "./Filters";
@@ -8,8 +8,11 @@ const CardList = (props) => {
     let sortedBooks = props.books;
     const [updateBooks, setUpdateBooks] = useState([]);
     const [updateFilter, setUpdateFilter] = useState('');
+    const [showFilters, setShowFilters] = useState(true);
 
     const setFilterHandler = (filter) => {
+
+        setUpdateFilter(filter)
 
         switch (filter) {
             case 'nameInc':
@@ -47,9 +50,9 @@ const CardList = (props) => {
                     return b.rate - a.rate
                 });
                 break;
+            default:
+                break;
         }
-
-        setUpdateFilter(filter)
         setUpdateBooks(sortedBooks);
     }
 
@@ -57,14 +60,26 @@ const CardList = (props) => {
         props.deleteCard(bookName);
     }
 
+    useEffect(() => {
+        console.log('jestem w useeffect')
+        if (props.books.length === 0) {
+            setShowFilters(false)
+        } else setShowFilters(true)
+
+        console.log(showFilters)
+        console.log(props.books)
+    }, [props.books]);
+
     return (
         <div className={"cardCont"}>
-            <Filters setFilter={setFilterHandler}/>
+            {showFilters ?
+                <Filters setFilter={setFilterHandler}/>
+                : null}
             {sortedBooks.map(book =>
                 <Card
                     title={book.title}
                     author={book.author}
-                    // date={book.date}
+                    date={book.date.toString()}
                     rate={book.rate}
                     notes={book.notes}
                     key={book.title}

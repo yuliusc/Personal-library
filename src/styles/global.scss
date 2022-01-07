@@ -1,4 +1,13 @@
 @import "_colors";
+@import "_fonts";
+
+h1 {
+
+}
+
+body {
+  overflow: overlay;
+}
 
 .customButton {
   align-items: center;
@@ -8,18 +17,19 @@
   color: black;
   cursor: pointer;
   display: flex;
-  font-size: 16px;
-  height: 40px;
+  font-size: 1.5rem;
+  height: 50px;
   justify-content: center;
   line-height: 24px;
   position: relative;
   padding: 0 20px;
+  font-family: "BebasNeue";
 
   &:after {
     content: "";
     background-color: black;
     border-radius: 0.5rem;
-    height: 40px;
+    height: 50px;
     left: 0;
     width: 100%;
     position: absolute;
