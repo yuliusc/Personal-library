@@ -1,4 +1,5 @@
-@import "colors";
+@import "_colors";
+@import "_fonts";
 
 .addBook {
   width: 400px;
@@ -9,7 +10,7 @@
   border-radius: 5px;
   margin-left: 50%;
   transform: translateX(-50%);
-  font-family: "BebasNeue";
+  font-family: "Nimbus";
 
   form {
     display: flex;
@@ -21,6 +22,7 @@
     border: none;
     margin: 5px 0;
     padding: 10px;
+    font-family: "Nimbus";
   }
 
   &__name, &__author {

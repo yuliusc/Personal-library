@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "BebasNeue";
+  src: local("BebasNeue"), url("../fonts/BebasNeue-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Zing";
+  src: local("Zing"), url("../fonts/Zing/ZingRustD2Demo-Base.otf") format("opentype");
+}
+@font-face {
+  font-family: "Nimbus";
+  src: local("Nimbus"), url("../fonts/Nimbus/NimbusMono-Regular.otf") format("opentype");
+}
 .addBook {
   width: 400px;
   z-index: 1000;
@@ -7,7 +19,7 @@
   border-radius: 5px;
   margin-left: 50%;
   transform: translateX(-50%);
-  font-family: "BebasNeue";
+  font-family: "Nimbus";
 }
 .addBook form {
   display: flex;
@@ -18,6 +30,7 @@
   border: none;
   margin: 5px 0;
   padding: 10px;
+  font-family: "Nimbus";
 }
 .addBook__name, .addBook__author {
   border: 2px solid #f8e3fb;

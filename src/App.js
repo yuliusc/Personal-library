@@ -6,12 +6,15 @@ import Navbar from "./components/Navbar";
 import CardsList from "./components/CardsList";
 import AddBook from "./components/AddBook";
 import Overlay from "./components/Overlay";
+import './styles/media.css';
 
 let books = [];
 
 if (JSON.parse(localStorage.getItem("bookSet")).length === 0) {
 
-    let currDate = new Date().toLocaleDateString('en-EN', {year: 'numeric', month: 'numeric', day: 'numeric'});
+    let d = new Date();
+
+    let currDate = [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('-')
 
     books = [
         {
@@ -106,5 +109,6 @@ function App() {
         </div>
     );
 }
+
 
 export default App;

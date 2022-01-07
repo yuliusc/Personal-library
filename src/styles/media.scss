@@ -1,0 +1,68 @@
+@media (max-width: 1200px) {
+  .App {
+    padding: 0 30px;
+  }
+
+  .filterCont {
+    width: auto !important;
+
+    .customDropdown {
+      left: 80px;
+      width: 130px;
+    }
+  }
+  .card {
+    &__left, &__right {
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .card__moreInfo {
+    width: 300px;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    &__buttons {
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+  .card {
+    flex-direction: column;
+    padding: 1rem;
+
+    &__moreInfo {
+      width: 250px;
+      right: auto;
+      bottom: 80px;
+
+      &:before {
+        right: calc(50% - 20px);
+        bottom: -40px;
+        border-color: #7a1a7a transparent transparent transparent;
+        top: auto;
+      }
+
+    }
+
+    &__left {
+      width: 100%;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    &__author {
+      padding-left: 0;
+    }
+
+    &__right {
+      width: 100%;
+    }
+  }
+}
+

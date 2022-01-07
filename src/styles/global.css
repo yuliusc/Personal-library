@@ -6,6 +6,10 @@
   font-family: "Zing";
   src: local("Zing"), url("../fonts/Zing/ZingRustD2Demo-Base.otf") format("opentype");
 }
+@font-face {
+  font-family: "Nimbus";
+  src: local("Nimbus"), url("../fonts/Nimbus/NimbusMono-Regular.otf") format("opentype");
+}
 body {
   overflow: overlay;
 }
