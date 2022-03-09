@@ -4,7 +4,7 @@
 .addBook {
   width: 400px;
   z-index: 1000;
-  position: absolute;
+  position: fixed;
   background: white;
   padding: 50px;
   border-radius: 5px;
@@ -18,14 +18,24 @@
     align-items: stretch;
   }
 
-  &__name, &__author, &__notes {
+  .warning {
+    background-color: #f2c6f2;
+  }
+  .warningStar i {
+    color: #f2c6f2;
+  }
+
+  &__name,
+  &__author,
+  &__notes {
     border: none;
     margin: 5px 0;
     padding: 10px;
     font-family: "Nimbus";
   }
 
-  &__name, &__author {
+  &__name,
+  &__author {
     border: 2px solid $mainLight;
   }
 
@@ -36,6 +46,8 @@
     word-break: break-word;
     text-align: left;
     margin-bottom: 1rem;
+    max-width: 100%;
+    min-width: 200px;
   }
 
   &__datenrate {
@@ -57,16 +69,18 @@
     }
 
     .colored {
-      color: $mainDark;
+      color: $mainDark !important;
       font-weight: 700;
     }
 
     .colored1 {
-      color: $mainDark;
+      color: $mainDark !important;
     }
   }
 
-  &__name:focus-visible, &__author:focus-visible, &__notes {
+  &__name:focus-visible,
+  &__author:focus-visible,
+  &__notes {
     outline: none;
   }
 
@@ -81,9 +95,7 @@
 
       &:after {
         height: 40px !important;
-
       }
     }
   }
-
 }

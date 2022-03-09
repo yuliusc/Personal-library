@@ -1,5 +1,5 @@
 @media (max-width: 1200px) {
-  .App {
+  .cardCont {
     padding: 0 30px;
   }
 
@@ -12,9 +12,20 @@
     }
   }
   .card {
-    &__left, &__right {
+    &__left,
+    &__right {
       text-align: left;
     }
+  }
+
+  .navbarSm {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer {
+    padding: 0 1rem;
   }
 }
 
@@ -22,14 +33,31 @@
   .card__moreInfo {
     width: 300px;
   }
-
 }
 
 @media (max-width: 576px) {
   .navbar {
+    display: flex;
+    flex-direction: column-reverse;
+
+    &__text {
+      padding: 2rem 0 1rem 0;
+    }
+
     &__buttons {
       justify-content: center;
-      flex-direction: column;
+      flex-direction: column !important;
+
+      button {
+        margin: 0 0 20px 0;
+      }
+    }
+  }
+  .navbarSm {
+    height: 180px;
+
+    &.navbar__text {
+      padding: 2rem 0 1rem 0;
     }
   }
   .card {
@@ -47,7 +75,6 @@
         border-color: #7a1a7a transparent transparent transparent;
         top: auto;
       }
-
     }
 
     &__left {
@@ -65,4 +92,3 @@
     }
   }
 }
-

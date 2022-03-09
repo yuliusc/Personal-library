@@ -1,46 +1,63 @@
 @import "_colors";
 @import "_fonts";
 
-h1 {
-
-}
-
 body {
   overflow: overlay;
 }
 
-.customButton {
+// .customButton {
+//   align-items: center;
+//   background-color: $mainLight;
+//   border: 5px solid black;
+//   color: black;
+//   cursor: pointer;
+//   display: flex;
+//   font-size: 1.2rem;
+//   height: 50px;
+//   justify-content: center;
+//   line-height: 24px;
+//   position: relative;
+//   padding: 0 20px;
+//   font-family: "BebasNeue";
+// }
+h1 {
+  font-family: "KeepCalm";
+  color: $mainLight;
+}
+.customButton,
+.customButtonDark {
   align-items: center;
-  background-color: $mainLight;
-  border: 2px solid black;
-  border-radius: 0.5rem;
-  color: black;
+  color: $mainLight;
+  border: 0;
+  background-color: inherit;
   cursor: pointer;
   display: flex;
-  font-size: 1.5rem;
-  height: 50px;
+  font-size: 1.3rem;
   justify-content: center;
   line-height: 24px;
   position: relative;
-  padding: 0 20px;
   font-family: "BebasNeue";
+}
 
-  &:after {
-    content: "";
-    background-color: black;
-    border-radius: 0.5rem;
-    height: 50px;
-    left: 0;
-    width: 100%;
-    position: absolute;
-    top: -2px;
-    transform: translate(6px, 6px);
-    transition: transform .2s ease-out;
-    z-index: -1;
-  }
+.customButton:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: white;
+  height: 5px;
+  width: 0%;
+  transition: width 0.2s linear;
+}
 
-  &:hover:after {
-    transform: translate(0, 0);
-  }
+.customButton:hover:after {
+  width: 20%;
+}
 
+.customButtonDark {
+  color: $mainDark;
+}
+
+.customButtonDark:hover {
+  color: $darkBackground;
 }

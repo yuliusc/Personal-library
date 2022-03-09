@@ -1,8 +1,7 @@
 @media (max-width: 1200px) {
-  .App {
+  .cardCont {
     padding: 0 30px;
   }
-
   .filterCont {
     width: auto !important;
   }
@@ -10,24 +9,65 @@
     left: 80px;
     width: 130px;
   }
-
   .card__left, .card__right {
     text-align: left;
   }
+  .navbarSm {
+    padding: 0 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer {
+    padding: 0 1rem;
+  }
 }
+
 @media (max-width: 800px) {
   .card__moreInfo {
     width: 300px;
   }
 }
-@media (max-width: 576px) {
-  .navbar__buttons {
-    justify-content: center;
-    flex-direction: column;
-  }
 
+@media (max-width: 576px) {
+  .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .navbar__text {
+    padding: 2rem 0 1rem 0;
+  }
+  .navbar__buttons {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  .navbar__buttons button {
+    margin: 0 0 20px 0;
+  }
+  .navbarSm {
+    height: 180px;
+  }
+  .navbarSm.navbar__text {
+    padding: 2rem 0 1rem 0;
+  }
   .card {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 1rem;
   }
   .card__moreInfo {
@@ -43,8 +83,13 @@
   }
   .card__left {
     width: 100%;
-    align-items: flex-start;
-    flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .card__author {
     padding-left: 0;
@@ -53,5 +98,4 @@
     width: 100%;
   }
 }
-
 /*# sourceMappingURL=media.css.map */
