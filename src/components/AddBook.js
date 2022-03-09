@@ -95,9 +95,9 @@ const AddBook = (props) => {
     }
   };
 
-  let warningColorName = warningName ? "warning " : null;
-  let warningColorAuthor = warningAuthor ? "warning " : null;
-  let warningColorStar = warningStars ? "warningStar " : null;
+  let warningColorName = warningName ? "warning " : "";
+  let warningColorAuthor = warningAuthor ? "warning " : "";
+  let warningColorStar = warningStars ? "warningStar " : "";
 
   return (
     <div className={"addBook"}>

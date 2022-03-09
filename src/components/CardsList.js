@@ -8,6 +8,7 @@ const CardList = (props) => {
   const [updateBooks, setUpdateBooks] = useState([]);
   const [updateFilter, setUpdateFilter] = useState("");
   const [showFilters, setShowFilters] = useState(true);
+  const [showText, setShowText] = useState(false);
 
   const setFilterHandler = (filter) => {
     setUpdateFilter(filter);
@@ -60,13 +61,32 @@ const CardList = (props) => {
 
   useEffect(() => {
     if (props.books.length === 0) {
+      setShowText(true);
+    } else {
+      setShowText(false);
+    }
+
+    if (props.books.length < 2) {
       setShowFilters(false);
     } else setShowFilters(true);
   }, [props.books]);
-
   return (
     <div className={"cardCont"}>
       {showFilters ? <Filters setFilter={setFilterHandler} /> : null}
+
+      {showText ? (
+        <p className="cardCont__noBooks">
+          <span onClick={props.showAddBookForm}>Add first book</span> or{" "}
+          <span
+            onClick={() => {
+              window.location.reload();
+            }}
+          >
+            refresh the page
+          </span>{" "}
+          to see book examples
+        </p>
+      ) : null}
       {sortedBooks.map((book) => (
         <Card
           title={book.title}

@@ -4,8 +4,6 @@
   }
 
   .filterCont {
-    width: auto !important;
-
     .customDropdown {
       left: 80px;
       width: 130px;
@@ -39,9 +37,11 @@
   .navbar {
     display: flex;
     flex-direction: column-reverse;
+    height: 170px;
 
     &__text {
       padding: 2rem 0 1rem 0;
+      font-size: 1.5rem;
     }
 
     &__buttons {
@@ -54,18 +54,19 @@
     }
   }
   .navbarSm {
-    height: 180px;
-
-    &.navbar__text {
-      padding: 2rem 0 1rem 0;
-    }
+    height: 160px;
   }
+
+  .cardCont {
+    margin-top: 170px;
+  }
+
   .card {
     flex-direction: column;
     padding: 1rem;
 
     &__moreInfo {
-      width: 250px;
+      width: 90%;
       right: auto;
       bottom: 80px;
 
@@ -89,6 +90,25 @@
 
     &__right {
       width: 100%;
+    }
+
+    &__notes {
+      height: 55px;
+      overflow: scroll;
+    }
+  }
+
+  .addBook {
+    width: 90%;
+    box-sizing: border-box;
+    padding: 40px 20px 20px 20px;
+
+    &__datenrate {
+      flex-direction: column;
+    }
+
+    &__date {
+      margin-top: 10px;
     }
   }
 }

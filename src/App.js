@@ -122,7 +122,11 @@ function App() {
       {showAddBook ? (
         <AddBook onAddBook={addBookHandler} closeAddBook={addBookFormHide} />
       ) : null}
-      <CardsList books={bookSet} deleteCard={deleteCard} />
+      <CardsList
+        books={bookSet}
+        deleteCard={deleteCard}
+        showAddBookForm={addBookForm}
+      />
       <Footer />
     </div>
   );
