@@ -80,8 +80,7 @@ function App() {
       localStorage.setItem("bookSet", JSON.stringify([temp, ...prev]));
       return [temp, ...prev];
     });
-
-    setTimeout(addBookFormHide, 1000);
+    addBookFormHide();
   };
 
   const deleteCard = (bookName) => {
