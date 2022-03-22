@@ -21,7 +21,7 @@
 .footer {
   height: 400px;
   background-image: url("../images/background.jpg");
-  background-size: contain;
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
