@@ -1,9 +1,9 @@
-@import "_colors";
-@import "_fonts";
+@import "../../styles/colors";
+@import "../../styles/_fonts";
 
 .footer {
   height: 400px;
-  background-image: url("../images/background.jpg");
+  background-image: url("../../images/background.jpg");
   background-size: cover;
   display: flex;
   justify-content: flex-end;

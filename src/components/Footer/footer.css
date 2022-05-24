@@ -1,26 +1,26 @@
 @font-face {
   font-family: "BebasNeue";
-  src: local("BebasNeue"), url("../fonts/BebasNeue-Regular.ttf") format("truetype");
+  src: local("BebasNeue"), url("../../fonts/BebasNeue-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Zing";
-  src: local("Zing"), url("../fonts/Zing/ZingRustD2Demo-Base.otf") format("opentype");
+  src: local("Zing"), url("../../fonts/Zing/ZingRustD2Demo-Base.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Nimbus";
-  src: local("Nimbus"), url("../fonts/Nimbus/NimbusMono-Regular.otf") format("opentype");
+  src: local("Nimbus"), url("../../fonts/Nimbus/NimbusMono-Regular.otf") format("opentype");
 }
 
 @font-face {
   font-family: "KeepCalm";
-  src: local("KeepCalm"), url("../fonts/KeepCalm-Medium.ttf") format("truetype");
+  src: local("KeepCalm"), url("../../fonts/KeepCalm-Medium.ttf") format("truetype");
 }
 
 .footer {
   height: 400px;
-  background-image: url("../images/background.jpg");
+  background-image: url("../../images/background.jpg");
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -48,4 +48,4 @@
       -ms-flex-align: end;
           align-items: flex-end;
 }
-/*# sourceMappingURL=Footer.css.map */
+/*# sourceMappingURL=footer.css.map */

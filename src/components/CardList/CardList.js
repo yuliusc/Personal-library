@@ -3,7 +3,7 @@ import useCardList from "./useCardList";
 import Card from "../Card/Card";
 import Filters from "../Filters/Filters";
 
-// import "../styles/cardCont.css";
+import "./cardCont.css";
 
 const CardList = ({ books, deleteCard, showAddBookForm }) => {
   const {

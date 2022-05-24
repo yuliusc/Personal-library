@@ -1,25 +1,13 @@
 @import "_colors";
-@import "_fonts";
+
+@font-face {
+  font-family: "KeepCalm";
+  src: local("KeepCalm"), url("../fonts/KeepCalm-Medium.ttf") format("truetype");
+}
 
 body {
   overflow: overlay;
 }
-
-// .customButton {
-//   align-items: center;
-//   background-color: $mainLight;
-//   border: 5px solid black;
-//   color: black;
-//   cursor: pointer;
-//   display: flex;
-//   font-size: 1.2rem;
-//   height: 50px;
-//   justify-content: center;
-//   line-height: 24px;
-//   position: relative;
-//   padding: 0 20px;
-//   font-family: "BebasNeue";
-// }
 h1 {
   font-family: "KeepCalm";
   color: $mainLight;

@@ -1,4 +1,4 @@
-// import "../styles/addBook.css";
+import "./addBook.css";
 import useAddBook from "./useAddBook";
 
 const AddBook = ({ closeAddBook, onAddBook }) => {
@@ -20,7 +20,7 @@ const AddBook = ({ closeAddBook, onAddBook }) => {
   } = useAddBook(onAddBook);
 
   return (
-    <div className={"addBook"}>
+    <div>
       <form onSubmit={addBookHandler}>
         <button
           onClick={closeAddBook}

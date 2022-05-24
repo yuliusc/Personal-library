@@ -1,22 +1,23 @@
 @font-face {
   font-family: "BebasNeue";
   src: local("BebasNeue"),
-    url("../fonts/BebasNeue-Regular.ttf") format("truetype");
+    url("../../fonts/BebasNeue-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Zing";
   src: local("Zing"),
-    url("../fonts/Zing/ZingRustD2Demo-Base.otf") format("opentype");
+    url("../../fonts/Zing/ZingRustD2Demo-Base.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Nimbus";
   src: local("Nimbus"),
-    url("../fonts/Nimbus/NimbusMono-Regular.otf") format("opentype");
+    url("../../fonts/Nimbus/NimbusMono-Regular.otf") format("opentype");
 }
 
 @font-face {
   font-family: "KeepCalm";
-  src: local("KeepCalm"), url("../fonts/KeepCalm-Medium.ttf") format("truetype");
+  src: local("KeepCalm"),
+    url("../../fonts/KeepCalm-Medium.ttf") format("truetype");
 }
