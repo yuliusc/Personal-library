@@ -67,6 +67,14 @@ const useCardList = (books, deleteCard, showAddBookForm) => {
       setShowFilters(false);
     } else setShowFilters(true);
   }, [books]);
+
+  return {
+    showFilters,
+    setFilterHandler,
+    showText,
+    sortedBooks,
+    deleteCardHandler,
+  };
 };
 
 export default useCardList;

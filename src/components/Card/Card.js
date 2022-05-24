@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/card.css";
+// import "../styles/card.css";
 
 const Card = ({ title, author, rate, notes, date, deleteCard }) => {
   const [showMI, setShowMI] = useState(false);

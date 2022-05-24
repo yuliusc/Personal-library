@@ -1,6 +1,6 @@
 import useNavbar from "./useNavbar";
 
-import "../styles/navbar.css";
+// import "../styles/navbar.css";
 
 const Navbar = ({ deleteAllBooks, showAddBookForm }) => {
   const navbar = useNavbar();

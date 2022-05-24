@@ -1,6 +1,6 @@
 import useFilters from "./useFilters";
 
-import "../styles/customDropdown.css";
+// import "../styles/customDropdown.css";
 
 function Filters({ setFilter }) {
   const { showSortBy, hideSortBy, cssClassesDropdown, changeFilter } =
