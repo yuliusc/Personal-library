@@ -1,4 +1,5 @@
 @font-face {
+<<<<<<< HEAD
   font-family: "BebasNeue";
   src: local("BebasNeue"), url("../fonts/BebasNeue-Regular.ttf") format("truetype");
 }
@@ -14,6 +15,8 @@
 }
 
 @font-face {
+=======
+>>>>>>> refactoring-code
   font-family: "KeepCalm";
   src: local("KeepCalm"), url("../fonts/KeepCalm-Medium.ttf") format("truetype");
 }
@@ -27,6 +30,13 @@ h1 {
   color: #ececec;
 }
 
+<<<<<<< HEAD
+=======
+button {
+  outline: none;
+}
+
+>>>>>>> refactoring-code
 .customButton,
 .customButtonDark {
   -webkit-box-align: center;

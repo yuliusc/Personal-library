@@ -1,9 +1,18 @@
 @import "_colors";
+<<<<<<< HEAD
 @import "_fonts";
+=======
+
+@font-face {
+  font-family: "KeepCalm";
+  src: local("KeepCalm"), url("../fonts/KeepCalm-Medium.ttf") format("truetype");
+}
+>>>>>>> refactoring-code
 
 body {
   overflow: overlay;
 }
+<<<<<<< HEAD
 
 // .customButton {
 //   align-items: center;
@@ -20,11 +29,20 @@ body {
 //   padding: 0 20px;
 //   font-family: "BebasNeue";
 // }
+=======
+>>>>>>> refactoring-code
 h1 {
   font-family: "KeepCalm";
   color: $mainLight;
 }
 
+<<<<<<< HEAD
+=======
+button {
+  outline: none;
+}
+
+>>>>>>> refactoring-code
 .customButton,
 .customButtonDark {
   align-items: center;

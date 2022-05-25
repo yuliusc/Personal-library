@@ -1,16 +1,13 @@
-import './App.css';
-import Navbar from "./components/Navbar";
-import CardsList from "./components/CardsList";
-import AddBook from "./components/AddBook";
+import Home from "./pages/Home/Home";
+import "./styles/global.css";
+import "./styles/media.css";
 
 function App() {
-    return (
-        <div className="App">
-            <Navbar/>
-            <AddBook/>
-            <CardsList></CardsList>
-        </div>
-    );
+  return (
+    <div className="App">
+      <Home />
+    </div>
+  );
 }
 
 export default App;

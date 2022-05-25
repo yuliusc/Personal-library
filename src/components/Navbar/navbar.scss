@@ -1,0 +1,46 @@
+.navbar {
+  background-image: url("../../images/background.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  padding: 0 calc((100vw - 1024px) / 2);
+  height: 200px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  box-sizing: border-box;
+  transition: all 0.5s linear;
+  &__text {
+    margin: 0;
+    padding: 2rem 0 3rem 0;
+    text-align: center;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row !important;
+
+    button {
+      margin: 20px 10px;
+      height: auto;
+    }
+  }
+}
+
+.navbarSm {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  height: 100px;
+  transition: all 0.5s linear;
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin: 20px 10px;
+    }
+  }
+}
