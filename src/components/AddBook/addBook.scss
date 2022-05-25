@@ -1,0 +1,111 @@
+@import "../../styles/_colors";
+@import "../../styles/_fonts";
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.addBook {
+  animation: fade-in 1s;
+  width: 400px;
+  z-index: 1000;
+  position: fixed;
+  background: white;
+  padding: 50px;
+  border-radius: 5px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  font-family: "Nimbus";
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .warning {
+    background-color: #f2c6f2;
+  }
+  .warningStar i {
+    color: #f2c6f2;
+  }
+
+  &__name,
+  &__author,
+  &__notes {
+    border: none;
+    margin: 5px 0;
+    padding: 10px;
+    font-family: "Nimbus";
+  }
+
+  &__name,
+  &__author {
+    border: 2px solid $mainLight;
+  }
+
+  &__notes {
+    border: 2px solid $mainLight;
+    height: auto;
+    white-space: normal;
+    word-break: break-word;
+    text-align: left;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    min-width: 200px;
+  }
+
+  &__datenrate {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+  }
+
+  &__date {
+    border-color: $mainLight;
+    border-width: 0 0 3px 0;
+    outline: none;
+  }
+
+  &__rate {
+    i {
+      font-size: 25px;
+      color: $mainLight;
+    }
+
+    .colored {
+      color: $mainDark !important;
+      font-weight: 700;
+    }
+
+    .colored1 {
+      color: $mainDark !important;
+    }
+  }
+
+  &__name:focus-visible,
+  &__author:focus-visible,
+  &__notes {
+    outline: none;
+  }
+
+  &__button {
+    &--close {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      padding: 0 10px;
+
+      &:after {
+        height: 40px !important;
+      }
+    }
+  }
+}

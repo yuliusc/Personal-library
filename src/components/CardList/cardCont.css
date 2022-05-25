@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "BebasNeue";
+  src: local("BebasNeue"), url("../../fonts/BebasNeue-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Zing";
+  src: local("Zing"), url("../../fonts/Zing/ZingRustD2Demo-Base.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Nimbus";
+  src: local("Nimbus"), url("../../fonts/Nimbus/NimbusMono-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "KeepCalm";
+  src: local("KeepCalm"), url("../../fonts/KeepCalm-Medium.ttf") format("truetype");
+}
+
+.cardCont {
+  max-width: 1024px;
+  margin: auto;
+  margin-top: 230px;
+}
+
+.cardCont__noBooks {
+  font-family: "Zing";
+  font-size: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.cardCont__noBooks span {
+  position: relative;
+  cursor: pointer;
+}
+
+.cardCont__noBooks span:after {
+  content: "";
+  position: absolute;
+  background-color: #e0a6e0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 15px;
+  z-index: -1;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.cardCont__noBooks span:hover:after {
+  height: 0;
+}
+/*# sourceMappingURL=cardCont.css.map */

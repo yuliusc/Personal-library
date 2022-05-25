@@ -1,0 +1,119 @@
+@media (max-width: 1200px) {
+  .cardCont {
+    padding: 0 30px;
+  }
+  .filterCont .customDropdown {
+    left: 80px;
+    width: 130px;
+  }
+  .card__left, .card__right {
+    text-align: left;
+  }
+  .navbarSm {
+    padding: 0 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .card__moreInfo {
+    width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    height: 170px;
+  }
+  .navbar__text {
+    padding: 2rem 0 1rem 0;
+    font-size: 1.5rem;
+  }
+  .navbar__buttons {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  .navbar__buttons button {
+    margin: 0 0 20px 0;
+  }
+  .navbarSm {
+    height: 160px;
+  }
+  .cardCont {
+    margin-top: 170px;
+  }
+  .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 1rem;
+  }
+  .card__moreInfo {
+    width: 90%;
+    right: auto;
+    bottom: 80px;
+  }
+  .card__moreInfo:before {
+    right: calc(50% - 20px);
+    bottom: -40px;
+    border-color: #7a1a7a transparent transparent transparent;
+    top: auto;
+  }
+  .card__left {
+    width: 100%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card__author {
+    padding-left: 0;
+  }
+  .card__right {
+    width: 100%;
+  }
+  .card__notes {
+    height: 55px;
+    overflow: scroll;
+  }
+  .addBook {
+    width: 90%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 40px 20px 20px 20px;
+  }
+  .addBook__datenrate {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .addBook__date {
+    margin-top: 10px;
+  }
+}
+/*# sourceMappingURL=media.css.map */
