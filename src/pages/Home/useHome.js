@@ -113,6 +113,7 @@ const useHome = () => {
     addBookHandler,
     addBookFormHide,
     bookSet,
+    setBookSet,
     deleteCard,
   };
 };

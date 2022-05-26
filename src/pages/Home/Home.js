@@ -1,4 +1,5 @@
 import useHome from "./useHome";
+import { BooksContext } from "../../context/BooksContext";
 
 import Navbar from "../../components/Navbar/Navbar";
 import CardsList from "../../components/CardList/CardList";
@@ -14,6 +15,7 @@ const Home = () => {
     addBookHandler,
     addBookFormHide,
     bookSet,
+    setBookSet,
     deleteCard,
   } = useHome();
 
@@ -27,11 +29,13 @@ const Home = () => {
       {showAddBook ? (
         <AddBook onAddBook={addBookHandler} closeAddBook={addBookFormHide} />
       ) : null}
-      <CardsList
-        books={bookSet}
-        deleteCard={deleteCard}
-        showAddBookForm={addBookForm}
-      />
+      <BooksContext.Provider value={{ bookSet, setBookSet }}>
+        <CardsList
+          books={bookSet}
+          deleteCard={deleteCard}
+          showAddBookForm={addBookForm}
+        />
+      </BooksContext.Provider>
       <Footer />
     </div>
   );
