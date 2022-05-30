@@ -12,9 +12,9 @@ const useHome = () => {
     localStorage.getItem("bookSet") === null ||
     JSON.parse(localStorage.getItem("bookSet")).length === 0
   ) {
-    let d = new Date();
+    const d = new Date();
 
-    let currDate = [d.getFullYear(), d.getMonth() + 1, d.getDate()].join("-");
+    const currDate = [d.getFullYear(), d.getMonth() + 1, d.getDate()].join("-");
 
     books = [
       {
@@ -79,7 +79,7 @@ const useHome = () => {
   };
 
   const deleteCard = (bookName) => {
-    let tempBookSet = [];
+    const tempBookSet = [];
     bookSet.forEach((book) => {
       if (book.title !== bookName) {
         tempBookSet.push(book);

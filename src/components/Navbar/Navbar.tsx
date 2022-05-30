@@ -1,9 +1,10 @@
 import useNavbar from "./useNavbar";
+import React from "react";
 
 import "./navbar.css";
 
-const Navbar = ({ deleteAllBooks, showAddBookForm }) => {
-  const navbar = useNavbar();
+const Navbar: React.FC = () => {
+  const { navbar, deleteAllBooks, showAddBookForm } = useNavbar();
 
   return (
     <>

@@ -1,7 +1,24 @@
+import React from "react";
 import { useState } from "react";
 import "./card.css";
 
-const Card = ({ title, author, rate, notes, date, deleteCard }) => {
+interface Props {
+  title: string;
+  author: string;
+  rate: number;
+  notes: string;
+  date: string;
+  deleteCard: (title: string) => void;
+}
+
+const Card: React.FC<Props> = ({
+  title,
+  author,
+  rate,
+  notes,
+  date,
+  deleteCard,
+}) => {
   const [showMI, setShowMI] = useState(false);
 
   const onDeleteCard = () => {

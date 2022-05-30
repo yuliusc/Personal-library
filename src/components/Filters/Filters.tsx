@@ -1,8 +1,14 @@
+import React from "react";
+
 import useFilters from "./useFilters";
 
 import "./filters.css";
 
-function Filters({ setFilter }) {
+interface Props {
+  setFilter: () => void;
+}
+
+const Filters: React.FC<Props> = ({ setFilter }) => {
   const { showSortBy, hideSortBy, cssClassesDropdown, changeFilter } =
     useFilters(setFilter);
 
@@ -15,7 +21,7 @@ function Filters({ setFilter }) {
       <p id="sortByText">
         Sort by:<span id="currentFilter"></span>
       </p>
-      <ul name="Sort by" id="sortBy" className={cssClassesDropdown.join(" ")}>
+      <ul id="sortBy" className={cssClassesDropdown.join(" ")}>
         <li>
           <button value="nameInc" onClick={changeFilter}>
             Book name &#8599;
@@ -49,6 +55,6 @@ function Filters({ setFilter }) {
       </ul>
     </div>
   );
-}
+};
 
 export default Filters;

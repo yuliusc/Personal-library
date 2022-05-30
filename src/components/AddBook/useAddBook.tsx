@@ -1,6 +1,16 @@
 import { useState } from "react";
 
-const useAddBook = (onAddBook) => {
+interface onAddBookArgs {
+  bookName: string;
+  bookAuthor: string;
+  bookRate: number;
+  bookDate: string;
+  bookNotes: string;
+}
+
+const useAddBook = (
+  onAddBook: (bookName, bookAuthor, bookRate, bookDate, bookNotes) => void
+) => {
   const [bookName, setbookName] = useState("");
   const [bookAuthor, setbookAuthor] = useState("");
   const [bookRate, setbookRate] = useState("");
@@ -10,7 +20,7 @@ const useAddBook = (onAddBook) => {
   const [warningAuthor, setWarningAuthor] = useState(false);
   const [warningStars, setWarningStars] = useState(false);
 
-  const addBookHandler = (e) => {
+  const addBookHandler = (e: Event) => {
     e.preventDefault();
     if (bookName.trim().length === 0) {
       setWarningName(true);
@@ -80,7 +90,7 @@ const useAddBook = (onAddBook) => {
     setbookRate(e.target.id.replace("star", ""));
     let flag = 0;
     for (let i = 5; i > 0; i--) {
-      let setTemp = "setUpdateStars" + i;
+      const setTemp = "setUpdateStars" + i;
       eval(setTemp)("far fa-star");
 
       if (e.target.id.replace("star", "") == i) {
@@ -94,9 +104,9 @@ const useAddBook = (onAddBook) => {
     }
   };
 
-  let warningColorName = warningName ? "warning " : "";
-  let warningColorAuthor = warningAuthor ? "warning " : "";
-  let warningColorStar = warningStars ? "warningStar " : "";
+  const warningColorName = warningName ? "warning " : "";
+  const warningColorAuthor = warningAuthor ? "warning " : "";
+  const warningColorStar = warningStars ? "warningStar " : "";
 
   return {
     addBookHandler,

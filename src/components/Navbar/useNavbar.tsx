@@ -5,7 +5,7 @@ const useNavbar = () => {
   const navbar = !position ? "navbar" : "navbarSm navbar";
 
   useEffect(() => {
-    const getPos = (event) => {
+    const getPos = () => {
       if (window.scrollY > 150) {
         setPosition(true);
       } else {
@@ -20,7 +20,14 @@ const useNavbar = () => {
     };
   }, []);
 
-  return navbar;
+  const deleteAllBooks = () => {
+    return true;
+  };
+  const showAddBookForm = () => {
+    return true;
+  };
+
+  return { navbar, deleteAllBooks, showAddBookForm };
 };
 
 export default useNavbar;

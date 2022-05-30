@@ -1,3 +1,4 @@
+import React from "react";
 import useHome from "./useHome";
 import { BooksContext } from "../../context/BooksContext";
 
@@ -7,7 +8,7 @@ import AddBook from "../../components/AddBook/AddBook";
 import Overlay from "../../components/Overlay/Overlay";
 import Footer from "../../components/Footer/Footer";
 
-const Home = () => {
+const Home: React.FC = () => {
   const {
     deleteAllBooksHandler,
     addBookForm,
@@ -22,10 +23,10 @@ const Home = () => {
   return (
     <div>
       <Navbar
-        deleteAllBooks={deleteAllBooksHandler}
-        showAddBookForm={addBookForm}
+      // deleteAllBooks={deleteAllBooksHandler}
+      // showAddBookForm={addBookForm}
       />
-      <Overlay showOverlay={showAddBook} />
+      {/* <Overlay showOverlay={showAddBook} /> */}
       {showAddBook ? (
         <AddBook onAddBook={addBookHandler} closeAddBook={addBookFormHide} />
       ) : null}

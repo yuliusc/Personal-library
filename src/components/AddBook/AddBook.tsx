@@ -1,7 +1,14 @@
+import React from "react";
+
 import "./addBook.css";
 import useAddBook from "./useAddBook";
 
-const AddBook = ({ closeAddBook, onAddBook }) => {
+interface Props {
+  closeAddBook: () => void;
+  onAddBook: () => void;
+}
+
+const AddBook: React.FC<Props> = ({ closeAddBook, onAddBook }) => {
   const {
     addBookHandler,
     warningColorName,
@@ -63,7 +70,6 @@ const AddBook = ({ closeAddBook, onAddBook }) => {
           ></input>
         </div>
         <textarea
-          type="text"
           id="bookNotes"
           placeholder={"Notes"}
           className={"addBook__notes"}
