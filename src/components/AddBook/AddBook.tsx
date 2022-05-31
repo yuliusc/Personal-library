@@ -28,7 +28,7 @@ const AddBook: React.FC<Props> = ({ closeAddBook, onAddBook }) => {
 
   return (
     <div>
-      <form onSubmit={addBookHandler}>
+      <form onSubmit={() => addBookHandler()}>
         <button
           onClick={closeAddBook}
           className={"customButtonDark addBook__button--close"}

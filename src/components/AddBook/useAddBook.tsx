@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 interface onAddBookArgs {
   bookName: string;
@@ -8,9 +8,7 @@ interface onAddBookArgs {
   bookNotes: string;
 }
 
-const useAddBook = (
-  onAddBook: (bookName, bookAuthor, bookRate, bookDate, bookNotes) => void
-) => {
+const useAddBook = ({onAddBook<onAddBookArgs>}) => {
   const [bookName, setbookName] = useState("");
   const [bookAuthor, setbookAuthor] = useState("");
   const [bookRate, setbookRate] = useState("");
@@ -20,7 +18,7 @@ const useAddBook = (
   const [warningAuthor, setWarningAuthor] = useState(false);
   const [warningStars, setWarningStars] = useState(false);
 
-  const addBookHandler = (e: Event) => {
+  const addBookHandler = (e: React.FormEvent) => {
     e.preventDefault();
     if (bookName.trim().length === 0) {
       setWarningName(true);
@@ -49,36 +47,36 @@ const useAddBook = (
     setbookDate("");
   };
 
-  const bookNameChange = (e) => {
-    setbookName(e.target.value);
+  const bookNameChange = (e: React.ChangeEvent) => {
+    setbookName((e.target as HTMLInputElement).value);
   };
 
-  const bookNameBlur = (e) => {
-    if (!e.target.value) {
+  const bookNameBlur = (e: React.FormEvent) => {
+    if (!(e.target as HTMLInputElement).value) {
       setWarningName(true);
     } else {
       setWarningName(false);
     }
   };
 
-  const bookAuthorChange = (e) => {
-    setbookAuthor(e.target.value);
-    if (!e.target.value) {
+  const bookAuthorChange = (e: React.ChangeEvent) => {
+    setbookAuthor((e.target as HTMLInputElement).value);
+    if (!(e.target as HTMLInputElement).value) {
       setWarningAuthor(true);
     }
   };
-  const bookAuthorBlur = (e) => {
-    if (!e.target.value) {
+  const bookAuthorBlur = (e: React.FormEvent) => {
+    if (!(e.target as HTMLInputElement).value) {
       setWarningAuthor(true);
     } else {
       setWarningAuthor(false);
     }
   };
-  const bookNotesChange = (e) => {
-    setbookNotes(e.target.value);
+  const bookNotesChange = (e: React.ChangeEvent) => {
+    setbookNotes((e.target as HTMLInputElement).value);
   };
-  const bookDateChange = (e) => {
-    setbookDate(e.target.value);
+  const bookDateChange = (e: React.FormEvent) => {
+    setbookDate((e.target as HTMLInputElement).value);
   };
   const [updateStars1, setUpdateStars1] = useState("far fa-star");
   const [updateStars2, setUpdateStars2] = useState("far fa-star");
@@ -86,19 +84,19 @@ const useAddBook = (
   const [updateStars4, setUpdateStars4] = useState("far fa-star");
   const [updateStars5, setUpdateStars5] = useState("far fa-star");
 
-  const colorStar = (e) => {
-    setbookRate(e.target.id.replace("star", ""));
-    let flag = 0;
+  const colorStar = (e: Event) => {
+    setbookRate((e.target as HTMLInputElement).id.replace("star", ""));
+    let flag = "0";
     for (let i = 5; i > 0; i--) {
       const setTemp = "setUpdateStars" + i;
       eval(setTemp)("far fa-star");
 
-      if (e.target.id.replace("star", "") == i) {
-        flag = i;
+      if ((e.target as HTMLElement).id.replace("star", "") == "1") {
+        flag = i.toString();
         eval(setTemp)("fas fa-star colored");
       }
 
-      if (flag > i) {
+      if (flag > i.toString()) {
         eval(setTemp)("far fa-star colored1");
       }
     }
