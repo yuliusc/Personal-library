@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BooksContext } from "../../context/BooksContext";
 
 interface onAddBookArgs {
   bookName: string;
@@ -8,7 +9,7 @@ interface onAddBookArgs {
   bookNotes: string;
 }
 
-const useAddBook = ({onAddBook<onAddBookArgs>}) => {
+const useAddBook = ({ onAddBook }) => {
   const [bookName, setbookName] = useState("");
   const [bookAuthor, setbookAuthor] = useState("");
   const [bookRate, setbookRate] = useState("");
