@@ -14,16 +14,12 @@ const AddBook: React.FC<Props> = ({ closeAddBook, onAddBook }) => {
     warningColorName,
     bookNameChange,
     bookNameBlur,
-    bookName,
     warningColorAuthor,
     bookAuthorChange,
     bookAuthorBlur,
-    bookAuthor,
     warningColorStar,
     bookDateChange,
-    bookDate,
     bookNotesChange,
-    bookNotes,
   } = useAddBook(onAddBook);
 
   return (

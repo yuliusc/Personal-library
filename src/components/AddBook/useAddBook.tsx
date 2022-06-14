@@ -1,55 +1,63 @@
 import React, { useState } from "react";
 import { BooksContext } from "../../context/BooksContext";
 
-interface onAddBookArgs {
-  bookName: string;
-  bookAuthor: string;
-  bookRate: number;
-  bookDate: string;
-  bookNotes: string;
-}
+type bookData = {
+  name: string;
+  author: string;
+  rate: string;
+  date: string;
+  notes: string;
+};
 
-const useAddBook = ({ onAddBook }) => {
-  const [bookName, setbookName] = useState("");
-  const [bookAuthor, setbookAuthor] = useState("");
-  const [bookRate, setbookRate] = useState("");
-  const [bookNotes, setbookNotes] = useState("");
-  const [bookDate, setbookDate] = useState("");
+type onAddBookArgs = (bookData: bookData) => void;
+
+const useAddBook = ({ onAddBook: onAddBookArgs }) => {
+  const [bookData, setBookData] = useState<bookData>({
+    name: "",
+    author: "",
+    rate: "",
+    date: "",
+    notes: "",
+  });
   const [warningName, setWarningName] = useState(false);
   const [warningAuthor, setWarningAuthor] = useState(false);
   const [warningStars, setWarningStars] = useState(false);
 
   const addBookHandler = (e: React.FormEvent) => {
     e.preventDefault();
-    if (bookName.trim().length === 0) {
+    if (bookData.name.trim().length === 0) {
       setWarningName(true);
     }
-    if (bookAuthor.trim().length === 0) {
+    if (bookData.author.trim().length === 0) {
       setWarningAuthor(true);
     }
-    if (!bookRate.length) {
+    if (!bookData.rate.length) {
       setWarningStars(true);
     }
 
     if (
-      bookName.trim().length === 0 ||
-      bookAuthor.trim().length === 0 ||
-      !bookRate.length
+      bookData.name.trim().length === 0 ||
+      bookData.author.trim().length === 0 ||
+      !bookData.rate.length
     ) {
       return;
     }
 
-    onAddBook(bookName, bookAuthor, bookRate, bookDate, bookNotes);
-
-    setbookName("");
-    setbookAuthor("");
-    setbookRate("");
-    setbookNotes("");
-    setbookDate("");
+    // onAddBook(bookData);
+    setBookData({
+      name: "",
+      author: "",
+      rate: "",
+      date: "",
+      notes: "",
+    });
   };
 
   const bookNameChange = (e: React.ChangeEvent) => {
-    setbookName((e.target as HTMLInputElement).value);
+    setBookData((prev) => ({
+      ...prev,
+      ["name"]: (e.target as HTMLInputElement).value,
+    }));
   };
 
   const bookNameBlur = (e: React.FormEvent) => {
@@ -60,8 +68,26 @@ const useAddBook = ({ onAddBook }) => {
     }
   };
 
+  const dataChangeHandler = (e: React.ChangeEvent) => {
+    const dataTemp = { bookData };
+
+    dataTemp[(e.target as HTMLInputElement).name] = (
+      e.target as HTMLInputElement
+    ).value;
+
+    console.log(
+      (e.target as HTMLInputElement).name +
+        "   " +
+        (e.target as HTMLInputElement).value
+    );
+    // setBookData(dataTemp);
+  };
+
   const bookAuthorChange = (e: React.ChangeEvent) => {
-    setbookAuthor((e.target as HTMLInputElement).value);
+    setBookData((prev) => ({
+      ...prev,
+      ["author"]: (e.target as HTMLInputElement).value,
+    }));
     if (!(e.target as HTMLInputElement).value) {
       setWarningAuthor(true);
     }
@@ -74,10 +100,16 @@ const useAddBook = ({ onAddBook }) => {
     }
   };
   const bookNotesChange = (e: React.ChangeEvent) => {
-    setbookNotes((e.target as HTMLInputElement).value);
+    setBookData((prev) => ({
+      ...prev,
+      ["notes"]: (e.target as HTMLInputElement).value,
+    }));
   };
   const bookDateChange = (e: React.FormEvent) => {
-    setbookDate((e.target as HTMLInputElement).value);
+    setBookData((prev) => ({
+      ...prev,
+      ["date"]: (e.target as HTMLInputElement).value,
+    }));
   };
   const [updateStars1, setUpdateStars1] = useState("far fa-star");
   const [updateStars2, setUpdateStars2] = useState("far fa-star");
@@ -86,7 +118,7 @@ const useAddBook = ({ onAddBook }) => {
   const [updateStars5, setUpdateStars5] = useState("far fa-star");
 
   const colorStar = (e: Event) => {
-    setbookRate((e.target as HTMLInputElement).id.replace("star", ""));
+    // setbookRate((e.target as HTMLInputElement).id.replace("star", ""));
     let flag = "0";
     for (let i = 5; i > 0; i--) {
       const setTemp = "setUpdateStars" + i;
@@ -112,16 +144,12 @@ const useAddBook = ({ onAddBook }) => {
     warningColorName,
     bookNameChange,
     bookNameBlur,
-    bookName,
     warningColorAuthor,
     bookAuthorChange,
     bookAuthorBlur,
-    bookAuthor,
     warningColorStar,
     bookDateChange,
-    bookDate,
     bookNotesChange,
-    bookNotes,
   };
 };
 
