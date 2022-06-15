@@ -4,13 +4,9 @@ import useFilters from "./useFilters";
 
 import "./filters.css";
 
-interface Props {
-  setFilter: () => void;
-}
-
-const Filters: React.FC<Props> = ({ setFilter }) => {
+const Filters = () => {
   const { showSortBy, hideSortBy, cssClassesDropdown, changeFilter } =
-    useFilters(setFilter);
+    useFilters();
 
   return (
     <div

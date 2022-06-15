@@ -8,7 +8,7 @@ interface Props {
   rate: number;
   notes: string;
   date: string;
-  deleteCard: (title: string) => void;
+  // deleteCard: (title: string) => void;
 }
 
 const Card: React.FC<Props> = ({
@@ -17,12 +17,12 @@ const Card: React.FC<Props> = ({
   rate,
   notes,
   date,
-  deleteCard,
+  // deleteCard,
 }) => {
   const [showMI, setShowMI] = useState(false);
 
   const onDeleteCard = () => {
-    deleteCard(title);
+    // deleteCard(title);
   };
 
   const showMoreInfo = () => {

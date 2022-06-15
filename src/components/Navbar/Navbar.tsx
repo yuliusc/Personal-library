@@ -4,7 +4,7 @@ import React from "react";
 import "./navbar.css";
 
 const Navbar: React.FC = () => {
-  const { navbar, deleteAllBooks, showAddBookForm } = useNavbar();
+  const { navbar, deleteAllBooks, showAddBookFormHandler } = useNavbar();
 
   return (
     <>
@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
             Clear book set
           </button>
           <button
-            onClick={showAddBookForm}
+            onClick={showAddBookFormHandler}
             className={navbar + "__add customButton"}
           >
             Add your book

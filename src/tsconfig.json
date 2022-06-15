@@ -1,8 +1,9 @@
 {
-  "include": ["src/*"],
+  "include": ["./src/"],
   "compilerOptions": {
     "target": "es5",
     "jsx": "react",
     "allowSyntheticDefaultImports": true
+    // "noImplicitAny": true
   }
 }
