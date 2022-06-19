@@ -1,0 +1,36 @@
+.addBook {
+  width: 400px;
+  margin: auto;
+}
+
+.addBook form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.addBook__name, .addBook__author, .addBook__notes {
+  border: none;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.addBook__name, .addBook__author {
+  border-bottom: 2px solid red;
+}
+
+.addBook__notes {
+  border-left: 2px solid red;
+}
+
+.addBook__name:focus-visible, .addBook__author:focus-visible, .addBook__notes {
+  outline: none;
+}
+/*# sourceMappingURL=addBook.css.map */

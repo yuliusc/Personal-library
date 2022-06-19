@@ -15,13 +15,13 @@ const Home: React.FC = () => {
   return (
     <div>
       <ShowModalContext.Provider value={{ showModal, setShowModal }}>
-        <Navbar
-        // deleteAllBooks={deleteAllBooksHandler}
-        // showAddBookForm={addBookForm}
-        />
-        {/* <Overlay showOverlay={showAddBook} /> */}
-        <AddBook />
         <BooksContext.Provider value={{ bookSet, setBookSet }}>
+          <Navbar
+          // deleteAllBooks={deleteAllBooksHandler}
+          // showAddBookForm={addBookForm}
+          />
+          {/* <Overlay showOverlay={showAddBook} /> */}
+          <AddBook />
           <CardsList
             books={bookSet}
             // deleteCard={deleteCard}

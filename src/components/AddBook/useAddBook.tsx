@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { ShowModalContext } from "../../context/ShowModalContext";
 
 import { BooksContext } from "../../context/BooksContext";
-const { showModal, setShowModal } = useContext(ShowModalContext);
 
 // type bookData = {
 //   title: string;
@@ -12,9 +11,97 @@ const { showModal, setShowModal } = useContext(ShowModalContext);
 //   notes: string;
 // };
 
-// type onAddBookArgs = (bookData: bookData) => void;
+// type showModalT = (prev: boolean) => boolean;
+
+// interface Args {
+//   setShowModal: (prev: boolean) => void;
+// }
+interface BookT {
+  title: string;
+  author: string;
+  date: string;
+  notes: string;
+  rate: number;
+}
 
 const useAddBook = () => {
+  const { showModal, setShowModal } = useContext(ShowModalContext);
+  const { bookSet, setBookSet } = useContext(BooksContext);
+
+  const [bookData, setBookData] = useState<BookT>({
+    title: "",
+    author: "",
+    date: "",
+    notes: "",
+    rate: 0,
+  });
+
+  const [warnings, setWarnings] = useState({
+    title: false,
+    author: false,
+    rate: false,
+  });
+
+  const toggleShowAddBookForm = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    console.log("toggleShowAddBookForm");
+    setShowModal((prev: boolean) => !prev);
+  };
+
+  const changeHandler = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const tempBook = { ...bookData };
+    setBookData({
+      ...tempBook,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const validateInput = () => {
+    if (bookData.title.trim().length === 0) {
+      setWarnings({ ...warnings, ["title"]: true });
+      return;
+    }
+    if (bookData.author.trim().length === 0) {
+      setWarnings({ ...warnings, ["author"]: true });
+      return;
+    }
+    if (!bookData.rate) {
+      setWarnings({ ...warnings, ["rate"]: true });
+      return;
+    }
+  };
+
+  const addBookHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    validateInput();
+    const currentBookSet = localStorage.getItem("bookSet");
+
+    localStorage.setItem(
+      "bookSet",
+      JSON.stringify([bookData].concat(JSON.parse(currentBookSet!)))
+    );
+    setBookData({
+      title: "",
+      author: "",
+      date: "",
+      notes: "",
+      rate: 0,
+    });
+  };
+
+  return {
+    showModal,
+    toggleShowAddBookForm,
+    changeHandler,
+    addBookHandler,
+    bookData,
+    warnings,
+  };
+
   //   const [bookData, setBookData] = useState<bookData>({
   //     title: "",
   //     author: "",
@@ -29,28 +116,7 @@ const useAddBook = () => {
   //   });
   //   const addBookHandler = (e: React.FormEvent) => {
   //     e.preventDefault();
-  //     if (bookData.title.trim().length === 0) {
-  //       setWarnings({ ...warnings, warningTitle: true });
-  //       return;
-  //     }
-  //     if (bookData.author.trim().length === 0) {
-  //       setWarnings({ ...warnings, warningAuthor: true });
-  //       return;
-  //     }
-  //     if (!bookData.rate.length) {
-  //       setWarnings({ ...warnings, warningStars: true });
-  //       return;
-  //     }
-  //     const currentBookSet = localStorage.getItem("bookSet");
-  //     localStorage.setItem("bookSet", JSON.stringify([bookData, currentBookSet]));
-  //     setBookData({
-  //       title: "",
-  //       author: "",
-  //       rate: "",
-  //       date: "",
-  //       notes: "",
-  //     });
-  //   };
+
   // const bookNameChange = (e: React.ChangeEvent) => {
   //   setBookData((prev) => ({
   //     ...prev,

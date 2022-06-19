@@ -18,24 +18,6 @@
   src: local("KeepCalm"), url("../../fonts/KeepCalm-Medium.ttf") format("truetype");
 }
 
-@-webkit-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .addBook {
   -webkit-animation: fade-in 1s;
           animation: fade-in 1s;

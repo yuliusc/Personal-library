@@ -18,7 +18,7 @@ type booksType = book[];
 const useHome = () => {
   let books: booksType = [];
   const [bookSet, setBookSet] = useState(books);
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   const getBooks = () => {
     if (
@@ -72,6 +72,7 @@ const useHome = () => {
             "Sixty years after its original publication, Ray Bradbury’s internationally acclaimed novel Fahrenheit 451 stands as a classic of world literature set in a bleak, dystopian future. Today its message has grown more relevant than ever before.",
         },
       ];
+      localStorage.setItem("bookSet", JSON.stringify(books));
     } else {
       books = JSON.parse(localStorage.getItem("bookSet") as string);
     }
