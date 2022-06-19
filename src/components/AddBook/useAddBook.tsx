@@ -42,12 +42,42 @@ const useAddBook = () => {
     rate: false,
   });
 
+  const [stars, updateStars] = useState({
+    star1: false,
+    star2: false,
+    star3: false,
+    star4: false,
+    star5: false,
+  });
+
   const toggleShowAddBookForm = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
-    console.log("toggleShowAddBookForm");
     setShowModal((prev: boolean) => !prev);
+  };
+
+  const colorStar = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+    const tempStars = {
+      star1: false,
+      star2: false,
+      star3: false,
+      star4: false,
+      star5: false,
+    };
+    for (const i in stars) {
+      tempStars[i as keyof typeof tempStars] = true;
+      if (i === (e.target as HTMLElement).id) {
+        updateStars(tempStars);
+        const rating = (e.target as HTMLElement).id.replace("star", "");
+        const tempBook = { ...bookData };
+        setBookData({
+          ...tempBook,
+          ["rate"]: +rating,
+        });
+        return;
+      }
+    }
   };
 
   const changeHandler = (
@@ -61,23 +91,32 @@ const useAddBook = () => {
   };
 
   const validateInput = () => {
+    setWarnings({
+      title: false,
+      author: false,
+      rate: false,
+    });
     if (bookData.title.trim().length === 0) {
       setWarnings({ ...warnings, ["title"]: true });
-      return;
+      return false;
     }
     if (bookData.author.trim().length === 0) {
       setWarnings({ ...warnings, ["author"]: true });
-      return;
+      return false;
     }
     if (!bookData.rate) {
       setWarnings({ ...warnings, ["rate"]: true });
-      return;
+      return false;
     }
+    return true;
   };
 
   const addBookHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    validateInput();
+
+    if (!validateInput()) {
+      return;
+    }
     const currentBookSet = localStorage.getItem("bookSet");
 
     localStorage.setItem(
@@ -91,6 +130,11 @@ const useAddBook = () => {
       notes: "",
       rate: 0,
     });
+    setWarnings({
+      title: false,
+      author: false,
+      rate: false,
+    });
   };
 
   return {
@@ -100,6 +144,8 @@ const useAddBook = () => {
     addBookHandler,
     bookData,
     warnings,
+    stars,
+    colorStar,
   };
 
   //   const [bookData, setBookData] = useState<bookData>({

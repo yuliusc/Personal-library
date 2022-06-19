@@ -21,11 +21,10 @@
 .addBook {
   -webkit-animation: fade-in 1s;
           animation: fade-in 1s;
-  width: 400px;
+  width: 100%;
   z-index: 1000;
   position: fixed;
   background: white;
-  padding: 50px;
   border-radius: 5px;
   margin-left: 50%;
   -webkit-transform: translateX(-50%);
@@ -44,6 +43,8 @@
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  padding: 50px;
+  border: 2px solid #ececec;
 }
 
 .addBook .warning {
@@ -94,15 +95,12 @@
 .addBook__rate i {
   font-size: 25px;
   color: #ececec;
+  cursor: pointer;
 }
 
 .addBook__rate .colored {
   color: #7a1a7a !important;
   font-weight: 700;
-}
-
-.addBook__rate .colored1 {
-  color: #7a1a7a !important;
 }
 
 .addBook__name:focus-visible, .addBook__author:focus-visible, .addBook__notes {
@@ -112,7 +110,7 @@
 .addBook__button--close {
   width: 40px;
   height: 40px;
-  position: absolute;
+  position: absolute !important;
   right: 10px;
   top: 10px;
   padding: 0 10px;
@@ -120,5 +118,11 @@
 
 .addBook__button--close:after {
   height: 40px !important;
+}
+
+@media (min-width: 500px) {
+  .addBook {
+    width: 500px;
+  }
 }
 /*# sourceMappingURL=addBook.css.map */

@@ -27,6 +27,8 @@ const AddBookPortal = () => {
     addBookHandler,
     bookData,
     warnings,
+    stars,
+    colorStar,
   } = useAddBook();
 
   useEffect((): ReturnType<React.EffectCallback> => {
@@ -37,17 +39,8 @@ const AddBookPortal = () => {
     }
   }, [showModal]);
 
-  const [stars, updateStars] = useState({
-    star1: false,
-    star2: false,
-    star3: false,
-    star4: false,
-    star5: false,
-  });
-
   return (
     <div className="addBook">
-      {/* <form onSubmit={() => addBookHandler()}> */}
       {showModal && (
         <form onSubmit={addBookHandler}>
           <button
@@ -75,12 +68,24 @@ const AddBookPortal = () => {
             onChange={changeHandler}
           ></input>
 
-          {/* <div className={warningColorStar + " addBook__datenrate"}> */}
-          <div>
+          <div
+            className={[warnings.rate && "warningStar"] + " addBook__datenrate"}
+          >
             <div className={"addBook__rate"}>
               {
                 Object.keys(stars).map((el) => {
-                  return <i className="updateStars" id={el} key={el}></i>;
+                  return (
+                    <i
+                      className={
+                        [
+                          stars[el as keyof typeof stars] === true && "colored",
+                        ] + " updateStars far fa-star"
+                      }
+                      id={el}
+                      key={el}
+                      onClick={(e) => colorStar(e)}
+                    ></i>
+                  );
                 })
                 // .map(()=>{
                 //   return
