@@ -19,17 +19,18 @@
 }
 
 .addBook {
-  -webkit-animation: fade-in 1s;
-          animation: fade-in 1s;
-  width: 100%;
+  width: 90%;
   z-index: 1000;
   position: fixed;
   background: white;
   border-radius: 5px;
   margin-left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-family: "Nimbus";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .addBook form {
@@ -43,7 +44,7 @@
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  padding: 50px;
+  padding: 30px;
   border: 2px solid #ececec;
 }
 
@@ -74,13 +75,16 @@
   text-align: left;
   margin-bottom: 1rem;
   max-width: 100%;
-  min-width: 200px;
 }
 
 .addBook__datenrate {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin: 10px 0;
@@ -90,6 +94,7 @@
   border-color: #ececec;
   border-width: 0 0 3px 0;
   outline: none;
+  margin-top: 10px;
 }
 
 .addBook__rate i {
@@ -123,6 +128,18 @@
 @media (min-width: 500px) {
   .addBook {
     width: 500px;
+  }
+  .addBook form {
+    padding: 50px;
+  }
+  .addBook__datenrate {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .addBook__date {
+    margin-top: 0;
   }
 }
 /*# sourceMappingURL=addBook.css.map */

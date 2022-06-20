@@ -100,20 +100,5 @@
     height: 55px;
     overflow: scroll;
   }
-  .addBook {
-    width: 90%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 40px 20px 20px 20px;
-  }
-  .addBook__datenrate {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .addBook__date {
-    margin-top: 10px;
-  }
 }
 /*# sourceMappingURL=media.css.map */

@@ -97,18 +97,4 @@
       overflow: scroll;
     }
   }
-
-  .addBook {
-    width: 90%;
-    box-sizing: border-box;
-    padding: 40px 20px 20px 20px;
-
-    &__datenrate {
-      flex-direction: column;
-    }
-
-    &__date {
-      margin-top: 10px;
-    }
-  }
 }

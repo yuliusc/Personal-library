@@ -2,21 +2,22 @@
 @import "../../styles/_fonts";
 
 .addBook {
-  animation: fade-in 1s;
-  width: 100%;
+  width: 90%;
   z-index: 1000;
   position: fixed;
   background: white;
   border-radius: 5px;
   margin-left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   font-family: "Nimbus";
+  box-sizing: border-box;
 
   form {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding: 50px;
+    padding: 30px;
     border: 2px solid $mainLight;
   }
 
@@ -49,11 +50,11 @@
     text-align: left;
     margin-bottom: 1rem;
     max-width: 100%;
-    min-width: 200px;
   }
 
   &__datenrate {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     margin: 10px 0;
   }
@@ -62,6 +63,7 @@
     border-color: $mainLight;
     border-width: 0 0 3px 0;
     outline: none;
+    margin-top: 10px;
   }
 
   &__rate {
@@ -102,5 +104,16 @@
 @media (min-width: 500px) {
   .addBook {
     width: 500px;
+    form {
+      padding: 50px;
+    }
+
+    &__datenrate {
+      flex-direction: row;
+    }
+
+    &__date {
+      margin-top: 0;
+    }
   }
 }
