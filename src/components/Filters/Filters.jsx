@@ -8,6 +8,33 @@ const Filters = () => {
   const { showSortBy, hideSortBy, cssClassesDropdown, changeFilter } =
     useFilters();
 
+  const filters = [
+    {
+      name: "nameInc",
+      sign: "&#8599;",
+    },
+    {
+      name: "nameDec",
+      sign: "&#8600;",
+    },
+    {
+      name: "authorInc",
+      sign: "&#8599;",
+    },
+    {
+      name: "authorDec",
+      sign: "&#8600;",
+    },
+    {
+      name: "rateInc",
+      sign: "&#8599;",
+    },
+    {
+      name: "rateDec",
+      sign: "&#8600;",
+    },
+  ];
+
   return (
     <div
       className={"filterCont"}
@@ -18,6 +45,19 @@ const Filters = () => {
         Sort by:<span id="currentFilter"></span>
       </p>
       <ul id="sortBy" className={cssClassesDropdown.join(" ")}>
+        {filters.map((el) => {
+          return (
+            <li key={el.name}>
+              <button value={el.name} onClick={changeFilter}>
+                Book name{" "}
+                {String.fromCodePoint(
+                  parseInt(el.sign.replace(/&#|;/g, ""), 10)
+                )}
+              </button>
+            </li>
+          );
+        })}
+
         <li>
           <button value="nameInc" onClick={changeFilter}>
             Book name &#8599;

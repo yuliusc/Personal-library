@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { ShowModalContext } from "../../context/ShowModalContext";
+import { BooksContext } from "../../context/BooksContext";
 
 const useNavbar = () => {
   const [position, setPosition] = useState(false);
   const { showModal, setShowModal } = useContext(ShowModalContext);
-
+  const { bookSet, setBookSet } = useContext(BooksContext);
   const navbar = !position ? "navbar" : "navbarSm navbar";
 
   useEffect(() => {
@@ -25,11 +26,11 @@ const useNavbar = () => {
 
   const showAddBookFormHandler = () => {
     setShowModal(true);
-    console.log(showModal);
   };
 
   const deleteAllBooks = (): void => {
     localStorage.setItem("bookSet", JSON.stringify([]));
+    setBookSet([]);
   };
 
   return { navbar, deleteAllBooks, showAddBookFormHandler };

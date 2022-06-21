@@ -86,7 +86,7 @@ const useAddBook = () => {
     const tempBook = { ...bookData };
     setBookData({
       ...tempBook,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value.replace(/\s+/g, " "),
     });
   };
 
@@ -123,6 +123,8 @@ const useAddBook = () => {
       "bookSet",
       JSON.stringify([bookData].concat(JSON.parse(currentBookSet!)))
     );
+    console.log("here");
+    setBookSet([bookData].concat(JSON.parse(currentBookSet!)));
     setBookData({
       title: "",
       author: "",

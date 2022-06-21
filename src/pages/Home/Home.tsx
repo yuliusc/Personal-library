@@ -10,25 +10,22 @@ import AddBook from "../../components/AddBook/AddBook";
 import Footer from "../../components/Footer/Footer";
 
 const Home: React.FC = () => {
-  const { bookSet, setBookSet, showModal, setShowModal } = useHome();
+  const { bookSet, setBookSet } = useHome();
 
   return (
     <div>
-      <ShowModalContext.Provider value={{ showModal, setShowModal }}>
-        <BooksContext.Provider value={{ bookSet, setBookSet }}>
-          <Navbar
-          // deleteAllBooks={deleteAllBooksHandler}
-          // showAddBookForm={addBookForm}
-          />
-          {/* <Overlay showOverlay={showAddBook} /> */}
-          <AddBook />
-          <CardsList
-            books={bookSet}
-            // deleteCard={deleteCard}
-            // showAddBookForm={addBookForm}
-          />
-        </BooksContext.Provider>
-      </ShowModalContext.Provider>
+      <Navbar
+      // deleteAllBooks={deleteAllBooksHandler}
+      // showAddBookForm={addBookForm}
+      />
+      {/* <Overlay showOverlay={showAddBook} /> */}
+      <AddBook />
+      <CardsList
+      // books={bookSet}
+      // deleteCard={deleteCard}
+      // showAddBookForm={addBookForm}
+      />
+
       <Footer />
     </div>
   );

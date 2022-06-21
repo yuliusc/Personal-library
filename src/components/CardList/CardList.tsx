@@ -1,7 +1,7 @@
 import React from "react";
 
 import useCardList from "./useCardList";
-import { BooksContext } from "../../context/BooksContext";
+
 import { ShowModalContext } from "../../context/ShowModalContext";
 import { useContext } from "react";
 
@@ -35,21 +35,21 @@ interface Book {
   deleteCard: () => void;
 }
 // const CardList: React.FC<Props> = ({ books, deleteCard, showAddBookForm }) => {
-const CardList: React.FC<Props> = ({ books }) => {
+const CardList = () => {
   const {
     showFilters,
     // setFilterHandler,
+    bookSet,
     showText,
-    sortedBooks,
+    // sortedBooks,
     // deleteCardHandler,
-  } = useCardList(books);
+  } = useCardList();
 
   const { showModal, setShowModal } = useContext(ShowModalContext);
-  const { bookSet, setBookSet } = useContext(BooksContext);
 
   return (
     <div className={"cardCont"}>
-      {/* {showFilters ? <Filters setFilter={setFilterHandler} /> : null} */}
+      {showFilters ? <Filters /> : null}
 
       {bookSet.length === 0 ? (
         <p className="cardCont__noBooks">

@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { BooksContext } from "../../context/BooksContext";
 
 interface book {
   title: string;
@@ -11,13 +12,24 @@ interface book {
 type booksType = book[];
 type deleteCardType = () => void;
 
-const useCardList = (books: booksType) => {
+const useCardList = () => {
   // const useCardList = (books: booksType, deleteCard: deleteCardType) => {
-  const sortedBooks = books;
+  // const sortedBooks = books;
   const [updateBooks, setUpdateBooks] = useState([]);
   const [updateFilter, setUpdateFilter] = useState("");
   const [showFilters, setShowFilters] = useState(true);
   const [showText, setShowText] = useState(false);
+  const { bookSet, setBookSet } = useContext(BooksContext);
+
+  useEffect(() => {
+    console.log(bookSet);
+  }, []);
+
+  useEffect(() => {
+    if (bookSet.length < 2) {
+      setShowFilters(false);
+    } else setShowFilters(true);
+  }, [bookSet]);
 
   //   const setFilterHandler = (filter) => {
   //     setUpdateFilter(filter);
@@ -68,23 +80,24 @@ const useCardList = (books: booksType) => {
   //     deleteCard(bookName);
   //   };
 
-  useEffect(() => {
-    if (books.length === 0) {
-      setShowText(true);
-    } else {
-      setShowText(false);
-    }
+  // useEffect(() => {
+  //   if (books.length === 0) {
+  //     setShowText(true);
+  //   } else {
+  //     setShowText(false);
+  //   }
 
-    if (books.length < 2) {
-      setShowFilters(false);
-    } else setShowFilters(true);
-  }, [books]);
+  //   if (books.length < 2) {
+  //     setShowFilters(false);
+  //   } else setShowFilters(true);
+  // }, [books]);
 
   return {
     showFilters,
+    bookSet,
     // setFilterHandler,
     showText,
-    sortedBooks,
+    // sortedBooks,
     // deleteCardHandler,
   };
 };

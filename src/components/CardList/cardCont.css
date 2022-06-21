@@ -21,7 +21,8 @@
 .cardCont {
   max-width: 1024px;
   margin: auto;
-  margin-top: 230px;
+  margin-top: 170px;
+  padding: 0 30px;
 }
 
 .cardCont__noBooks {
@@ -52,5 +53,11 @@
 
 .cardCont__noBooks span:hover:after {
   height: 0;
+}
+
+@media (min-width: 575px) {
+  .cardCont {
+    margin-top: 200px;
+  }
 }
 /*# sourceMappingURL=cardCont.css.map */

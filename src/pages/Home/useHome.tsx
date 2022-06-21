@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, useContext } from "react";
+import { BooksContext } from "../../context/BooksContext";
 // import "./Home.styles";
 // import "./styles/global.css";
 
@@ -17,8 +17,7 @@ type booksType = book[];
 
 const useHome = () => {
   let books: booksType = [];
-  const [bookSet, setBookSet] = useState(books);
-  const [showModal, setShowModal] = useState<boolean>(false);
+  const { bookSet, setBookSet } = useContext(BooksContext);
 
   const getBooks = () => {
     if (
@@ -110,7 +109,7 @@ const useHome = () => {
   //   setShowAddBook((prev) => !prev);
   // };
 
-  return { bookSet, setBookSet, showModal, setShowModal };
+  return { bookSet, setBookSet };
 };
 
 export default useHome;
