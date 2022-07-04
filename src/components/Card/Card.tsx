@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useCard from "./useCard";
 
 import "./card.css";
@@ -15,6 +15,22 @@ const Card: React.FC<BookI> = ({ title, author, rate, notes, date }) => {
   const { showMoreInfoHandler, hideMoreInfo, showMoreInfo, deleteCardHandler } =
     useCard();
 
+  const filledStar = "fas fa-star";
+  const notFilledStar = "far fa-star";
+
+  const stars = [
+    notFilledStar,
+    notFilledStar,
+    notFilledStar,
+    notFilledStar,
+    notFilledStar,
+  ];
+
+  useEffect(() => {
+    stars[rate - 1] = filledStar;
+    // console.log(stars);
+  }, [stars]);
+  console.log(stars);
   return (
     <div className={"card"}>
       <div className={"card__left"}>
@@ -27,64 +43,18 @@ const Card: React.FC<BookI> = ({ title, author, rate, notes, date }) => {
           onMouseOver={showMoreInfoHandler}
           onMouseLeave={hideMoreInfo}
         >
-          {" "}
           Info
         </div>
         {showMoreInfo ? (
           <div className={"card__moreInfo"} id={"moreInfo"}>
-            {(() => {
-              if (rate === 1) {
-                return (
-                  <div className={"card__rate"}>
-                    <i className="fas fa-star"></i>
-                    <i className="far fa-star"></i>
-                    <i className="far fa-star"></i>
-                    <i className="far fa-star"></i>
-                    <i className="far fa-star"></i>
-                  </div>
-                );
-              } else if (rate === 2) {
-                return (
-                  <div className={"card__rate"}>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="far fa-star"></i>
-                    <i className="far fa-star"></i>
-                    <i className="far fa-star"></i>
-                  </div>
-                );
-              } else if (rate === 3) {
-                return (
-                  <div className={"card__rate"}>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="far fa-star"></i>
-                    <i className="far fa-star"></i>
-                  </div>
-                );
-              } else if (rate === 4) {
-                return (
-                  <div className={"card__rate"}>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="far fa-star"></i>
-                  </div>
-                );
-              } else if (rate === 5) {
-                return (
-                  <div className={"card__rate"}>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                  </div>
-                );
-              } else return;
-            })()}
+            <div className={"card__rate"}>
+              {stars.map((el, idx) => (
+                <>
+                  {el} <br />
+                </>
+                // <i className={el} key={idx}></i>
+              ))}
+            </div>
             <p className={"card__notes"}>
               {notes ? notes : "You left no notes"}{" "}
             </p>
