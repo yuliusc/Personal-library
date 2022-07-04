@@ -1,36 +1,19 @@
 import React from "react";
-import { useState } from "react";
+import useCard from "./useCard";
+
 import "./card.css";
 
-interface Props {
+interface BookI {
   title: string;
   author: string;
   rate: number;
   notes: string;
   date: string;
-  // deleteCard: (title: string) => void;
 }
 
-const Card: React.FC<Props> = ({
-  title,
-  author,
-  rate,
-  notes,
-  date,
-  // deleteCard,
-}) => {
-  const [showMI, setShowMI] = useState(false);
-
-  const onDeleteCard = () => {
-    // deleteCard(title);
-  };
-
-  const showMoreInfo = () => {
-    setShowMI(true);
-  };
-  const hideMoreInfo = () => {
-    setShowMI(false);
-  };
+const Card: React.FC<BookI> = ({ title, author, rate, notes, date }) => {
+  const { showMoreInfoHandler, hideMoreInfo, showMoreInfo, deleteCardHandler } =
+    useCard();
 
   return (
     <div className={"card"}>
@@ -41,13 +24,13 @@ const Card: React.FC<Props> = ({
       <div className={"card__right"}>
         <div
           className={"card__info"}
-          onMouseOver={showMoreInfo}
+          onMouseOver={showMoreInfoHandler}
           onMouseLeave={hideMoreInfo}
         >
           {" "}
           Info
         </div>
-        {showMI ? (
+        {showMoreInfo ? (
           <div className={"card__moreInfo"} id={"moreInfo"}>
             {(() => {
               if (rate === 1) {
@@ -114,8 +97,9 @@ const Card: React.FC<Props> = ({
         ) : null}
       </div>
       <button
-        onClick={onDeleteCard}
+        onClick={deleteCardHandler}
         className={"card__delete customButtonDark"}
+        value={title}
       >
         &#10006;
       </button>
