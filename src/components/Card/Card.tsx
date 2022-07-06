@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import useCard from "./useCard";
 
 import "./card.css";
@@ -18,19 +18,17 @@ const Card: React.FC<BookI> = ({ title, author, rate, notes, date }) => {
   const filledStar = "fas fa-star";
   const notFilledStar = "far fa-star";
 
-  const stars = [
-    notFilledStar,
-    notFilledStar,
-    notFilledStar,
-    notFilledStar,
-    notFilledStar,
-  ];
+  const generateStars = useMemo(() => {
+    console.log("generateStars");
+    const stars: string[] = [];
+    for (let i = 0; i < 5; i++) {
+      if (i + 1 <= rate) {
+        stars.push(filledStar);
+      } else stars.push(notFilledStar);
+    }
+    return stars;
+  }, []);
 
-  useEffect(() => {
-    stars[rate - 1] = filledStar;
-    // console.log(stars);
-  }, [stars]);
-  console.log(stars);
   return (
     <div className={"card"}>
       <div className={"card__left"}>
@@ -48,11 +46,8 @@ const Card: React.FC<BookI> = ({ title, author, rate, notes, date }) => {
         {showMoreInfo ? (
           <div className={"card__moreInfo"} id={"moreInfo"}>
             <div className={"card__rate"}>
-              {stars.map((el, idx) => (
-                <>
-                  {el} <br />
-                </>
-                // <i className={el} key={idx}></i>
+              {generateStars.map((el, idx) => (
+                <i className={el} key={idx}></i>
               ))}
             </div>
             <p className={"card__notes"}>
